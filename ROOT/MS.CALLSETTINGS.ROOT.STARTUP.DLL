@@ -1,0 +1,11 @@
+@:(C)MS.ORG
+REM BOS SYSTEM FILE
+set MS-PATH=%userprofile%\documents\MS
+set dr=%ms-path%\OS\User
+set dr-show=B:\OS\User
+set APP=%ms-path%\OS\APP
+set COMMAND-PATH=%app%\COMMAND
+SET DATA-USER=%MS-PATH%\USER\APPDATA
+SET OUTPUT=%MS-PATH%\OS\USER\OUTPUT
+set os-temp=%ms-path%\OS\temp
+exit /b 0

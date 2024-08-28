@@ -1,0 +1,42 @@
+ECHO echo ƒeƒ“ƒvƒŒ[ƒg‚ÌŽí—Þ‚É‚æ‚Á‚ÄA“ü—Í“à—e‚ªˆÙ‚È‚è‚Ü‚·B
+ECHO =USER‚Ìê‡=
+ECHO USER : //USERNAME
+ECHO PCNAME : //PCNAME
+ECHO INDEX : //‹ó”’–”‚ÍNULL
+ECHO TIME : //‹ó”’–”‚ÍNULL
+ECHO ‘±s‚·‚é‚É‚Í‰½‚©ƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢ . . .
+ECHO NAME : //TEMPLATENAME
+ECHO =TEMPLATE‚Ìê‡=
+ECHO USER : //USERNAME
+ECHO PCNAME : //PCNAME
+ECHO INDEX : //INDEX
+ECHO TIME : //TIME
+ECHO ‘±s‚·‚é‚É‚Í‰½‚©ƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢ . . .
+ECHO NAME : //TEMPLATENAME
+PAUSE
+SET /P USER="MSM USER : "
+SET /P PCNAME="MSM PCNAME : "
+SET INDEX=NULL
+SET MSM-TIME=NULL
+SET /P INDEX="MSM INDEX : "
+SET /P MSM-TIME="MSM TIME : "
+PAUSE
+SET /P NAME="MSM NAME : "
+ECHO ‘±s‚·‚é‚ÆAì¬‚µ‚Ü‚·B& PAUSE
+CD %DATA-USER%\MSM
+IF /I "%INDEX%" == "NULL" ( CD USER
+ MD %NAME% & CD %NAME%
+ ECHO %USER%>USER.TXT
+ ECHO %NET-PC%>PC.TXT
+ ECHO [32m[  OK  ][0m FINISHED NORMALLY
+ EXIT /B 0
+) else ( cd full
+ MD %NAME% & CD %NAME%
+ ECHO %USER%>USER.TXT
+ ECHO %NET-PC%>PC.TXT
+ echo %INDEX%>INDEX.TXT
+ ECHO %MSM-TIME%>TIME.TXT
+ ECHO [32m[  OK  ][0m FINISHED NORMALLY
+ EXIT /B 0
+)
+

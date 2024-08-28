@@ -1,0 +1,17 @@
+SDTOOL [VERSION 5.00.0]
+ SDTOOLコマンドは、SDTを使用しています。
+  SDT (c) MS Organization. All Rights Reserved.
+  SDT開発プロジェクトは、MSToolプロジェクトから引き継がれました。
+  SDTビルド:5.00.0 for BatchOS
+  for BatchOS は、一部の機能制限があります。"SDT 5.0.B1 Celeron Edition" をご利用ください。
+ SDTOOLコマンドは、PCのシャットダウンを行います。
+=基本構文=
+ $SDTOOL (-SD)(-BS)
+ $SDTOOL -HELP
+=引数の概要=
+ -SD   PCのシャットダウンを行います。
+ -BS   WindowsPCをクラッシュさせます。(非推奨)
+ -HELP ヘルプを表示します。
+=注意=
+このコマンドを使用するには、MSTool利用条約又は、SDT利用条約のいずれかに同意する必要があります。
+このコマンドによる損害は、一切の責任を取りません。自己責任でお願いします。
