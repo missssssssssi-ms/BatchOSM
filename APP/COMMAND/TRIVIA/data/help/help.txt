@@ -1,0 +1,16 @@
+Trivia for BatchOS [ Version 1.2 ]
+ Triviaコマンドは､MSToolから搭載された雑学を表示するコマンドです｡
+ MStoolとは､一部の構文が変わっています｡
+=基本構文=
+ $TRIVIA (-MSTool)(-BatchOS)(-Windows)
+ $TRIVIA -HELP
+=引数の概要=
+ -MSTool  MStoolに関する情報です｡
+ -BatchOS BatchOSに関する情報です｡
+ -Windows Windowsに関する情報です｡
+ -HELP    ヘルプを表示します｡
+ 
+ このコマンドは､引数が必須です｡
+=注意=
+ 内容は､開発時点のものです｡変わることがあります｡
+ MSToolは､現在サポートされていません｡

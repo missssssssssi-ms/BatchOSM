@@ -1,0 +1,46 @@
+TRIVIA Windows #1
+コマンドプロンプトで､バッチファイルを実行するには､よくCALLコマンドを使いますが､()を使うと､コードを貼り付けるだけでできます｡
+=コピペする文字=
+echo 1
+echo 2
+echo 3
+=実行例=
+ C:\Users\UserName>(
+ More? echo 1
+ More? echo 2
+ More? echo 3
+ More? )
+ 1
+ 2
+ 3
+ 
+ C:\Users\UserName>
+
+=CALLを使った例= 
+-hoge.Bat-
+echo 1
+echo 2
+echo 3
+-プロンプト-
+ C:\Users\UserName>call hoge.Bat
+ C:\Users\UserName>echo 1
+ 1
+ C:\Users\UserName>echo 2
+ 2
+ C:\Users\UserName>echo 3
+ 3
+
+ C:\Users\UserName>
+
+ ifやforなどで､()を使っても問題なく実行できます｡
+=実行例=
+ C:\Users\UserName>(
+ More? if /i 1==1 (
+ More? echo ok
+ More? )
+ More? echo end
+ More? )
+ ok
+ end
+ 
+ C:\Users\UserName>

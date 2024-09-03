@@ -1,9 +1,11 @@
 @rem MS.ORG All rights reserved.
 @rem BATCH OS BY MS
-@echo off
+
+rem # boot
 ECHO [32m[  OK  ][0m BATCH OS
 ECHO [33m[ INFO ][0m BOOTING...
 title BatchOS M
+rem ## product key check
 echo Don't change this code!>nul & if /i %computername%==computername ( goto load-settings ) & del ECHO [36m[ TASK ][0m DATA-LOAD>NUL
 echo Don't change this code!>nul & cd /d %~dp0
 echo Don't change this code!>nul & cd root
@@ -21,6 +23,7 @@ POWERSHELL EXIT
 TYPE DATA\IMAGE.BOS
 ECHO.
 echo.
+rem ## Full screen
 ECHO [36m[ TASK ][0m LOADING WINDOW SETTINGS
 ECHO [33m[ INFO ][0m DON'T STOP PROGRAM.
 if not "a%osmode%" == "aFalse" ( start /min sysfile\SC\AEO.BAT || ECHO [31m[ ERROR ][0m APP CALL ERROR!! )
@@ -31,6 +34,7 @@ ECHO [36m[ TASK ][0m OPENING BOS UI
 if not "a%osmode%" == "aFalse" ( POWERSHELL .\sysfile\fullscreen.ps1 )
 if /i "%computername%" == "computername" ( goto load-SETTINGS )
 if EXIST setup\user.bos ( goto load )
+rem ##setup
 :setup
 echo Welcome to Batch OS M
 echo ƒZƒbƒgƒAƒbƒv‚ðŠJŽn‚µ‚Ü‚·B
@@ -46,6 +50,7 @@ ECHO USERNAME:%USER%,PASSWORD:%PASSWORD%
 ECHO ADMINƒ†[ƒU[–¼‚Í•ÏX‚Å‚«‚Ü‚¹‚ñB & PAUSE
 ECHO %USER%>SETUP\USER.BOS
 ECHO %PASSWORD%>SETTINGS\USER\LOGON.EXE
+rem ### start guide
 type app\COMMAND\Learn\data\01.TXT | more
 PAUSE
 POWERSHELL EXIT
@@ -58,11 +63,14 @@ START OSCODE.BAT
 EXIT
 :load
 ECHO [36m[ TASK ][0m LOGON
+rem ## login
 :LOGON
 cd /d %~dp0
 POWERSHELL EXIT
 SET /P USER="USERNAME:"
 SET /P PASSWORD="PASSWORD:"
+rem ### check data
+rem #### user check
 cd SETUP
 rename USER.BOS [USING]SYSFIFE-DATA.TXT
 SET /P DATA-USER=<[USING]SYSFIFE-DATA.TXT
@@ -73,6 +81,7 @@ IF /i NOT "%DATA-USER%" == "%USER%" (
 set DATA-USER=
 set USER=
 cd /d %~dp0
+rem #### password check
 CD SETTINGS\USER
 rename LOGON.EXE [USING]SYSFIFE-APP-50482.48938.TXT
 SET /P DATA-PASSWORD=<[USING]SYSFIFE-APP-50482.48938.TXT
@@ -85,7 +94,9 @@ set DATA-PASSWORD=
 SET PASSWORD=
 POWERSHELL EXIT
 echo Welcome!!
+rem ## start bos
 goto load-SETTINGS
+rem ### load settings
 :load-SETTINGS
 cd /d %~dp0
 cd root
@@ -99,12 +110,12 @@ cd SETTINGS
 ren BatchOS.ver [USING]SYSDATA.VER.BOS.TXT
 set /p bov=<[USING]SYSDATA.VER.BOS.TXT
 ren [USING]SYSDATA.VER.BOS.TXT BatchOS.ver
-
+rem # start
 :start
 cd /d %~dp0
 CALL ROOT\APP.SYSTEM.DR.TR.BAT
 cd sysfile
-
+rem ## run Preparation
 SET DO=
 SET ENDLEVEL=
 set run=false
@@ -121,6 +132,7 @@ cd SYS-CALL
 call sc\Select.bat
 if %ERRORlevel%==0 ( goto start )
 if %run%==Ture goto start
+rem ## cmd error
 ECHO [31m[ ERROR ][0mCOMMAND ERROR!!
 ECHO [31m[ ERROR ][0m—v‹‚³‚ê‚½ƒRƒ}ƒ“ƒh‚Í–³Œø‚Å‚·B $HELP ‚ðŽÀs‚µ‚ÄŠm”F‚µ‚Ä‚­‚¾‚³‚¢B
 goto start
@@ -132,7 +144,7 @@ goto start
 
 
 
-
+rem # errors
 rem ERROR
 :ERROR-LOGON
 set DATA-USER=

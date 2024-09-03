@@ -10,4 +10,5 @@ if /i "%cmd:~0,6%" == "reboot"      ( call OS\reboot\reboot.bat & set run=Ture &
 if /i "%cmd:~0,10%" == "reboot -PC" ( shutdown /r /t 10 /c "10ïbå„Ç…PCÇçƒãNìÆÇµÇ‹Ç∑ÅB" )
 if /i "%cmd:~0,2%" == "cl"          ( shutdown /a & set run=Ture & exit /b )
 if /i "%cmd:~0,4%" == "file"        ( cd %COMMAND-path%\file & call boot.bat & exit /b )
+if /i "%cmd:~0,6%" == "trivia"      ( cd %COMMAND-path%\trivia & call boot.bat & exit /b  )
 exit /b 1
